@@ -1,0 +1,29 @@
+<!--<div>
+    <h1>My Goals</h1>
+    <hr>
+    <ul>
+      <li *ngFor='let goal of goals'>
+        {{goal.name}}
+        <p>{{goal.description}}</p>
+      </li>
+    </ul>
+  </div>-->
+ <div class="">
+  <ng-progress></ng-progress>
+  <h1>My Goals</h1>
+<hr>
+<ul>
+  <div *ngFor='let goal of goals;let i = index'>
+    <li>{{goal.name}}</li>
+    <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
+    <p *ngIf='goal.showDescription'>{{goal.description}}<p>
+  </div>
+</ul>
+<p *ngIf='goals.length > 5'>You have too many goals</p>
+<div class="row">
+  <blockquote class="blockquote text-center">
+    <p class="mb-0">{{quote.quote}}</p>
+    <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
+  </blockquote>
+</div> 
+ </div>
